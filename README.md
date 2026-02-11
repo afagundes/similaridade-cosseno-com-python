@@ -13,8 +13,8 @@ O material foi organizado para apoiar a escrita de um artigo técnico, permitind
 
 O pipeline de recomendação segue estas etapas:
 
-1. Carregamento dos dados de filmes (`data/movies.csv`).
-2. Seleção dos campos relevantes (`title`, `genres`, `keywords`, `cast`, `director`).
+1. Download do dataset via API do Kaggle (`kagglehub`).
+2. Carregamento e seleção dos campos relevantes (`title`, `genres`, `keywords`, `cast`, `director`).
 3. Pré-processamento textual (normalização e tokenização).
 4. Stemming com `PorterStemmer`.
 5. Vetorização com `CountVectorizer`.
@@ -27,6 +27,7 @@ O pipeline de recomendação segue estas etapas:
 - `numpy`
 - `nltk`
 - `scikit-learn`
+- `kagglehub`
 - `ipykernel` (suporte a execução em notebook)
 
 As dependências estão declaradas em `pyproject.toml` e são gerenciadas com `uv`.
@@ -35,9 +36,8 @@ As dependências estão declaradas em `pyproject.toml` e são gerenciadas com `u
 
 - `main.py`: script principal para execução do recomendador.
 - `notebook.ipynb`: versão interativa para estudo passo a passo do pipeline.
-- `data/movies.csv`: dataset utilizado no projeto.
 
-Origem do dataset `movies.csv`: [Kaggle - Movies CSV](https://www.kaggle.com/datasets/harshshinde8/movies-csv).
+Origem do dataset: [Kaggle - Movies CSV](https://www.kaggle.com/datasets/harshshinde8/movies-csv).
 
 ## Como executar
 
@@ -53,7 +53,7 @@ uv sync
 uv run main.py
 ```
 
-Esse comando processa os dados e imprime recomendações no terminal, junto com logs da execução.
+Esse comando baixa o dataset via `kagglehub`, processa os dados e imprime recomendações no terminal.
 
 ### 3. Executar de forma interativa (notebook)
 
@@ -61,7 +61,7 @@ Esse comando processa os dados e imprime recomendações no terminal, junto com 
 uv run jupyter notebook
 ```
 
-Depois, abra o arquivo `notebook.ipynb` para acompanhar cada etapa do algoritmo de forma interativa, com foco em análise e explicação para o artigo.
+Depois, abra `notebook.ipynb` para acompanhar cada etapa do algoritmo de forma interativa, com foco em análise e explicação para o artigo.
 
 ## Observações
 
