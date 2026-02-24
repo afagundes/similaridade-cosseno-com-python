@@ -1,7 +1,7 @@
 [project]
 name = "sistema-recomendacao"
 version = "0.1.0"
-description = "Add your description here"
+description = "Usando similaridade de cosseno para construir um sistema de recomendação"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
